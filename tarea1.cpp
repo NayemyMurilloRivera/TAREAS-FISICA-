@@ -70,12 +70,61 @@ void v_c(){
     }
     cout << "La magnitud es: " << magni << "\nLa direccion es: " << dire;
 }
-void v_d() {}
-void v_e() {}
+//parte d
+void v_d() {
+    double pi = 3.14159265358979323846;
+    double ax[2];
+    double ay[2];
+    double az[2];
+    cout << "Ingrese la componente x del vector 1:\n";
+    cin >> ax[0];
+    cout << "Ingrese la componente y del vector 1:\n";
+    cin >> ay[0];
+    cout << "Ingrese la componente z del vector 1:\n";
+    cin >> az[0];
+    cout << "Ingrese la componente x del vector 2:\n";
+    cin >> ax[1];
+    cout << "Ingrese la componente y del vector 2:\n";
+    cin >> ay[1];
+    cout << "Ingrese la componente z del vector 2:\n";
+    cin >> az[1];
+    double p_punto = (ax[0]*ax[1]) + (ay[0] * ay[1]) + (az[0] * az[1]);
+    double moduloa = sqrt(pow(ax[0],2)+ pow(ay[0], 2)+ pow(az[0], 2));
+    double modulob = sqrt(pow(ax[1], 2) + pow(ay[1], 2) + pow(az[1], 2));
+    double angulo = acos(p_punto / (moduloa * modulob))*180/pi;
+    cout << "El angulo es: " << angulo;
+}
+//parte e
+void v_e() {
+    double pi = 3.14159265358979323846;
+    double ax[2];
+    double ay[2];
+    double az[2];
+    cout << "Ingrese la componente x del vector 1:\n";
+    cin >> ax[0];
+    cout << "Ingrese la componente y del vector 1:\n";
+    cin >> ay[0];
+    cout << "Ingrese la componente z del vector 1:\n";
+    cin >> az[0];
+    cout << "Ingrese la componente x del vector 2:\n";
+    cin >> ax[1];
+    cout << "Ingrese la componente y del vector 2:\n";
+    cin >> ay[1];
+    cout << "Ingrese la componente z del vector 2:\n";
+    cin >> az[1];
+    double p_i = (ay[0]*az[1]-(az[0]*ay[1]));
+    double p_j = (az[0]*ax[1]-(ax[0]*az[1]));
+    double p_k = (ax[0]*ay[1]-(ay[0]*ax[1]));
+    double p_cruz = sqrt(pow(p_i, 2) + pow(p_j, 2) + pow(p_k, 2));
+    cout << "El area del paralelogramo de los vectores es: " << p_cruz;
+}
 int main()
 {
     //vector_a asd;
     //asd.coord();
     //v_b();
     //v_c();
+    //v_d();
+    v_e();
 }
+
